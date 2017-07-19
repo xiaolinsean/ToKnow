@@ -1,0 +1,41 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+
+#header{
+	height: auto;
+	background: white;
+	line-height: 100px;
+	/*border: 1px solid black;*/
+	position: relative;
+	overflow: auto;
+	min-width: 800px;
+}
+
+.logo{
+	float: left;
+	width: 100px;
+	height: 100px;
+	/*border: 1px solid black;*/
+}
+
+.logo img{
+	height: 50px;
+	width: auto;
+	margin: 25px 0;
+}
+
+.nav-div{
+	float: right;
+	width: 550px;
+	height: 100px;
+	margin-top: 25px;
+
+	/*border: 1px solid black;*/
+}
+
+.menu-item{
+	font-size: 18px;
+
+}
