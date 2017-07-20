@@ -41,6 +41,10 @@ module.exports = {
         loader: 'url'
       }
     ]
+  },
+
+  performance: {
+    hints: false
   }
   
 

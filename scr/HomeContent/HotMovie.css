@@ -1,0 +1,67 @@
+.spin{
+	width:100%;
+}
+
+.gutter-example{
+	width: 100%;
+
+}
+
+.gutter-example:after{
+	display:block;
+	content: "";
+	visibility: hidden;
+	clear: both;
+}
+
+.movie-item{
+	width:18%;
+	margin-left: 2.5%;
+	float: left;
+}
+
+.gutter-example div:nth-child(1){
+    
+    margin-left: 0;
+}
+.gutter-box {
+  /*background: #00A0E9;*/
+  /*padding: 5px 0;*/
+  /*border: 1px solid black;
+  height: 200px;*/
+  width: 100%;
+}
+
+.movie-pic{
+	width:100%;
+	padding-top: 150%;
+	border:1px solid black;
+}
+
+.gutter-box img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.gutter-box div{
+	height: 20px;
+	line-height: 20px;
+}
+.gutter-box .name{
+	float: left;
+}
+
+.gutter-box .score{
+	float: right;
+	font-size: 14px;
+	color: red;
+}
+
+.title{
+	height: 28px;
+	line-height: 28px;
+	font-size: 16px;
+	font-weight: bold;
+	color: red;
+}
