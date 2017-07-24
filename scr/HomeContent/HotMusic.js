@@ -1,0 +1,113 @@
+import React from "React";
+import { Spin, Row, Col, Icon } from 'antd';
+import fetchJsonp from 'fetch-jsonp';
+require('es6-promise').polyfill();
+import "./HotMusic.css";
+
+class MusicItem extends React.Component{
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    //this.props.Movies.images.large
+    console.log("MusicItem");
+    console.log(this.props.Music);
+    var picPath = this.props.Music.pic_big;
+    // picPath = picPath.slice(0, picPath.indexOf("@"));
+    console.log(picPath);
+    var bg = {
+        background: `url(${picPath})`,
+        backgroundSize: 'cover',
+    };
+    return (
+          <div className="music-item">
+            <div className="gutter-box">
+              <div className="music-pic" style={ bg } >
+                  <Icon type="play-circle-o" className="play-icon" />
+              </div>
+              <div>
+                <div className="music-title">{this.props.Music.title}</div><div className="author">{this.props.Music.author}</div>
+              </div>
+            </div>
+          </div>
+    );
+  }
+}
+
+class MusicCol extends React.Component{
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    console.log(this.props.MusicData);
+    var Items =[];
+    this.props.MusicData.forEach((Music) => {
+      Items.push(<MusicItem Music={Music} key={Music.song_id}/>);
+    });
+
+    return (
+      <div className="gutter-example">
+          {Items}
+      </div>
+    );
+  }
+}
+
+
+class Loading extends React.Component{
+  render() {
+    return (
+      <div>
+        <Spin size="large" wrapperClassName="spin" style={{margin:"0 auto",display: "block"}} />
+      </div>
+    );
+  }
+}
+
+class HotMusic extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      MusicData: null,
+      isLoading: true
+      };
+  }
+
+  componentDidMount() {
+    this.fetch_movie();
+  }
+
+
+  fetch_movie(){
+    // console.log("path:" + movie_path);
+    fetchJsonp("http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.billboard.billList&format=json&type=2&offset=0&size=8").then(response=> {
+    return response.json();
+  }).then(json=> {
+    this.setState({
+        MusicData: json.song_list,
+        isLoading: false
+      });
+    console.log('parsed json', json)
+  }).catch(err=>
+    console.log('parsing failed', err)
+  );
+  }   
+ 
+//<div onClick={this.fetch_movie.bind(this)}>hot movies</div>
+  render() {
+    console.log("MusicData:" );
+    console.log(this.state.MusicData);
+
+    var isLoading = this.state.isLoading;
+    console.log(isLoading);
+    return (
+      <div style={{margin:"20px 0"}}>
+          <span className="title">音乐风云</span>
+          { isLoading ? <Loading /> : <MusicCol MusicData={this.state.MusicData} />}
+      </div>
+      
+    );
+  }
+}
+export default HotMusic;

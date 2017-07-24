@@ -38,13 +38,7 @@
 	border:1px solid black;
 }
 
-.gutter-box img{
-	display: block;
-	width: 100%;
-	height: auto;
-}
-
-.gutter-box div{
+.gutter-box .movie-info{
 	height: 20px;
 	line-height: 20px;
 }

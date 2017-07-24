@@ -26,7 +26,7 @@ class TotalPage extends React.Component {
 			    </Content>
 
 			    <Footer style={{ textAlign: 'center' }}>
-			      TO KNOW ©2016 Created by xiaolinsean
+			      TO KNOW ©2017 Created by xiaolinsean
 			    </Footer>
 			  </Layout>
 		);

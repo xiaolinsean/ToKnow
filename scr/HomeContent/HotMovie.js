@@ -10,10 +10,10 @@ class MoviesItem extends React.Component{
   }
   render() {
     //this.props.Movies.images.large
-    console.log("MoviesItem");
-    console.log(this.props.Movies);
+    // console.log("MoviesItem");
+    // console.log(this.props.Movies);
     var picPath = this.props.Movies.images.large;
-    console.log(picPath);
+    // console.log(picPath);
     var bg = {
         background: `url(${picPath})`,
         backgroundSize: 'cover',
@@ -22,10 +22,10 @@ class MoviesItem extends React.Component{
           <div className="movie-item">
             <div className="gutter-box">
               <div className="movie-pic" style={ bg } >
-
+                  
               </div>
-              <div>
-                <span className="name">{this.props.Movies.title}</span><span className="score">{this.props.Movies.rating.average}</span>
+              <div className="movie-info">
+                <span className="name">{this.props.Movies.title}</span><span className="score">{this.props.Movies.rating.average}分</span>
               </div>
             </div>
           </div>
@@ -39,8 +39,8 @@ class MoviesCol extends React.Component{
   }
 
   render() {
-    console.log("MoviesCol");
-    console.log(this.props.MoviesData);
+    // console.log("MoviesCol");
+    // console.log(this.props.MoviesData);
     var Items =[];
     this.props.MoviesData.forEach((Movies) => {
       Items.push(<MoviesItem Movies={Movies} key={Movies.id}/>);
@@ -100,7 +100,7 @@ class HotMovie extends React.Component {
     console.log(this.state.MoviesData);
 
     var isLoading = this.state.isLoading;
-    console.log(isLoading);
+    // console.log(isLoading);
     return (
       <div style={{margin:"20px 0"}}>
           <span className="title">热映电影</span>
