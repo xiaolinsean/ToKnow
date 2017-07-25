@@ -2,6 +2,7 @@ import React from "React";
 import CarouselDiv from "./CarouselDiv.js";
 import HotMovie from "./HotMovie.js";
 import HotMusic from "./HotMusic.js";
+import MusicKind from "./MusicKind.js";
 
 class HomeContent extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class HomeContent extends React.Component {
 			<CarouselDiv></CarouselDiv>
 			<HotMovie></HotMovie>
       <HotMusic></HotMusic>
+      <MusicKind></MusicKind>
     	</div>
       
     );

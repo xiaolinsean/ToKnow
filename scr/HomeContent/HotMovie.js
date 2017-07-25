@@ -9,11 +9,8 @@ class MoviesItem extends React.Component{
     super(props);
   }
   render() {
-    //this.props.Movies.images.large
-    // console.log("MoviesItem");
-    // console.log(this.props.Movies);
+
     var picPath = this.props.Movies.images.large;
-    // console.log(picPath);
     var bg = {
         background: `url(${picPath})`,
         backgroundSize: 'cover',
@@ -39,8 +36,7 @@ class MoviesCol extends React.Component{
   }
 
   render() {
-    // console.log("MoviesCol");
-    // console.log(this.props.MoviesData);
+
     var Items =[];
     this.props.MoviesData.forEach((Movies) => {
       Items.push(<MoviesItem Movies={Movies} key={Movies.id}/>);
@@ -80,7 +76,6 @@ class HotMovie extends React.Component {
 
 
   fetch_movie(){
-    // console.log("path:" + movie_path);
     fetchJsonp("https://api.douban.com/v2/movie/in_theaters?count=5").then(response=> {
     return response.json();
   }).then(json=> {
@@ -94,13 +89,10 @@ class HotMovie extends React.Component {
   );
   }   
  
-//<div onClick={this.fetch_movie.bind(this)}>hot movies</div>
   render() {
-    console.log("MoviesData:" );
-    console.log(this.state.MoviesData);
 
     var isLoading = this.state.isLoading;
-    // console.log(isLoading);
+
     return (
       <div style={{margin:"20px 0"}}>
           <span className="title">热映电影</span>

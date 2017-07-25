@@ -1,6 +1,7 @@
 import React from "React";
-import { Spin, Row, Col, Icon } from 'antd';
+import { Row, Col, Icon } from 'antd';
 import fetchJsonp from 'fetch-jsonp';
+import Loading from "../common/Loading.js";
 require('es6-promise').polyfill();
 import "./HotMusic.css";
 
@@ -9,12 +10,8 @@ class MusicItem extends React.Component{
     super(props);
   }
   render() {
-    //this.props.Movies.images.large
-    console.log("MusicItem");
-    console.log(this.props.Music);
+    
     var picPath = this.props.Music.pic_big;
-    // picPath = picPath.slice(0, picPath.indexOf("@"));
-    console.log(picPath);
     var bg = {
         background: `url(${picPath})`,
         backgroundSize: 'cover',
@@ -55,15 +52,6 @@ class MusicCol extends React.Component{
 }
 
 
-class Loading extends React.Component{
-  render() {
-    return (
-      <div>
-        <Spin size="large" wrapperClassName="spin" style={{margin:"0 auto",display: "block"}} />
-      </div>
-    );
-  }
-}
 
 class HotMusic extends React.Component {
   constructor(props) {
@@ -94,13 +82,8 @@ class HotMusic extends React.Component {
   );
   }   
  
-//<div onClick={this.fetch_movie.bind(this)}>hot movies</div>
   render() {
-    console.log("MusicData:" );
-    console.log(this.state.MusicData);
-
     var isLoading = this.state.isLoading;
-    console.log(isLoading);
     return (
       <div style={{margin:"20px 0"}}>
           <span className="title">音乐风云</span>
