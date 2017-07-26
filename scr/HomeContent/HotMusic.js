@@ -68,7 +68,7 @@ class HotMusic extends React.Component {
 
   fetch_movie(){
     // console.log("path:" + movie_path);
-    fetchJsonp("http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.billboard.billList&format=json&type=2&offset=0&size=8").then(response=> {
+    fetchJsonp("https://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.billboard.billList&format=json&type=2&offset=0&size=8").then(response=> {
     return response.json();
   }).then(json=> {
     this.setState({
