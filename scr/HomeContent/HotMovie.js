@@ -22,7 +22,8 @@ class MoviesItem extends React.Component{
                   
               </div>
               <div className="movie-info">
-                <span className="name">{this.props.Movies.title}</span><span className="score">{this.props.Movies.rating.average}分</span>
+                <span className="name">{this.props.Movies.title}</span>
+                <span className="score">{this.props.Movies.rating.average ? this.props.Movies.rating.average : "暂无评分"}</span>
               </div>
             </div>
           </div>
@@ -92,10 +93,9 @@ class HotMovie extends React.Component {
   render() {
 
     var isLoading = this.state.isLoading;
-
     return (
       <div style={{margin:"20px 0"}}>
-          <span className="title">热映电影</span>
+          <p className="title">热映电影</p>
           { isLoading ? <Loading /> : <MoviesCol MoviesData={this.state.MoviesData} />}
       </div>
       

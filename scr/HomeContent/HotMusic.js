@@ -37,7 +37,6 @@ class MusicCol extends React.Component{
   }
 
   render() {
-    console.log(this.props.MusicData);
     var Items =[];
     this.props.MusicData.forEach((Music) => {
       Items.push(<MusicItem Music={Music} key={Music.song_id}/>);
@@ -86,7 +85,7 @@ class HotMusic extends React.Component {
     var isLoading = this.state.isLoading;
     return (
       <div style={{margin:"20px 0"}}>
-          <span className="title">音乐风云</span>
+          <p className="title">音乐风云</p>
           { isLoading ? <Loading /> : <MusicCol MusicData={this.state.MusicData} />}
       </div>
       

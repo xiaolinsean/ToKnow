@@ -35,10 +35,13 @@
 .movie-pic{
 	width:100%;
 	padding-top: 150%;
-	border:1px solid black;
+	border-radius: 5px;
+	box-shadow: 4px 4px 4px #888888;
+	/*border:1px solid black;*/
 }
 
 .gutter-box .movie-info{
+	margin-top: 5px;
 	height: 20px;
 	line-height: 20px;
 }
@@ -58,4 +61,5 @@
 	font-size: 16px;
 	font-weight: bold;
 	color: red;
+	margin-bottom: 5px;
 }

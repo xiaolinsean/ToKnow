@@ -27,6 +27,8 @@
 	width:100%;
 	border-bottom: 1px solid #D7D5D5;
 	padding: 10px 0;
+	border-left: 10px solid #D6C305;
+
 }
 
 .music-header img{
@@ -64,6 +66,16 @@
 
 .list-item .item-info p{
 	line-height: 20px;
+}
+
+.list-item .item-info .music-title{
+	color: black;
+	font-size: 14px;
+}
+
+.list-item .item-info .music-author{
+	color: #8C8989;
+	font-size: 12px;
 }
 
 .list-item .item-play{
