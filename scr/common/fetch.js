@@ -4,7 +4,7 @@ require('es6-promise').polyfill();
 // 获取电影列表
 export function fetch_info(opts) {
   console.log(opts);
-  var REQUEST_PATH = "http://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.billboard.billList&format=json&type=" + opts.type + "&offset=" + opts.start + "&size=" + opts.size;
+  var REQUEST_PATH = "https://tingapi.ting.baidu.com/v1/restserver/ting?from=qianqian&version=2.1.0&method=baidu.ting.billboard.billList&format=json&type=" + opts.type + "&offset=" + opts.start + "&size=" + opts.size;
   const result = fetchJsonp(REQUEST_PATH, {
     timeout: 5000,
   });
